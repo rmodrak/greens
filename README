@@ -1,0 +1,10 @@
+
+To generate a set of Green's functions:
+
+  - check that the desired SPECFEM3D_GLOBE parameter files exist in input/ 
+
+  - adjust the following variables in submit.bash: input, model, solver, nproc, walltime
+
+  - activate the desired environment, e.g. "source __envs/activate.bash"
+
+  - run "submit.bash", which sets up working directories and submits SLURM jobs

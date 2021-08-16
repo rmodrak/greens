@@ -1,0 +1,48 @@
+#!/bin/bash -e
+
+function reset_mt {
+   sed -i 's/Mrr:.*/Mrr: 0.e20/' $1
+   sed -i 's/Mtt:.*/Mrr: 0.e20/' $1
+   sed -i 's/Mpp:.*/Mrr: 0.e20/' $1
+   sed -i 's/Mrt:.*/Mrr: 0.e20/' $1
+   sed -i 's/Mrp:.*/Mrr: 0.e20/' $1
+   sed -i 's/Mtp:.*/Mrr: 0.e20/' $1
+}
+
+old="CMTSOLUTION"
+new="CMTSOLUTION_Mrr"
+cp $old $new
+reset_mt  $new
+sed -i 's/Mrr:.*/Mrr: 1.e20/' $new
+
+old="CMTSOLUTION"
+new="CMTSOLUTION_Mtt"
+cp $old $new
+reset_mt  $new
+sed -i 's/Mrr:.*/Mtt: 1.e20/' $new
+
+old="CMTSOLUTION"
+new="CMTSOLUTION_Mpp"
+cp $old $new
+reset_mt  $new
+sed -i 's/Mrr:.*/Mpp: 1.e20/' $new
+
+old="CMTSOLUTION"
+new="CMTSOLUTION_Mrt"
+cp $old $new
+reset_mt  $new
+sed -i 's/Mrr:.*/Mrt: 1.e20/' $new
+
+old="CMTSOLUTION"
+new="CMTSOLUTION_Mrp"
+cp $old $new
+reset_mt  $new
+sed -i 's/Mrr:.*/Mrp: 1.e20/' $new
+
+old="CMTSOLUTION"
+new="CMTSOLUTION_Mtp"
+cp $old $new
+reset_mt  $new
+sed -i 's/Mrr:.*/Mtp: 1.e20/' $new
+
+
