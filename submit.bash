@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 NPROC=256
-WALLTIME=40
+WALLTIME=75
 
 cd $(dirname ${BASH_SOURCE[0]})
 ROOTDIR=$PWD
@@ -61,7 +61,7 @@ echo ""
 echo "Submitting jobs..."
 echo ""
 
-for src in Mrr Mtt
+for src in Mrr Mtt Mpp Mrt Mrp Mtp
 do
    WORKDIR="_run/$EVENT/$MODEL/$src"
    mkdir -p $WORKDIR

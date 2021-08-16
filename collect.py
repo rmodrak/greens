@@ -11,7 +11,9 @@ if __name__=='__main__':
     #model = 's40rts_crust1.0'
     model = '1D_ak135f_no_mud'
 
-    for src in ['Mrr', 'Mtt']:
+    #for src in ['Mrr', 'Mtt', 'Mpp', 'Mrt', 'Mrp', 'Mtp']:
+    for src in ['Mrp', 'Mtp']:
+
 
        dir1 = join('_run', event, model, src, 'OUTPUT_FILES')
        dir2 = join('output', event, model)
